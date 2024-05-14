@@ -13,8 +13,11 @@ try:
     yd = yt.streams.get_highest_resolution()
     
     # Download the video to the current directory
-    yd.download()
+    yd.download('E:\Programacion')
     
     print("Download complete.")
 except Exception as e:
     print("An error occurred:", str(e))
+
+#Ejemplo para ejecutar en consola:
+#python3 DescargarVideosYT.py "https://www.youtube.com/watch?v=Q7UeWILja-g&t=3s"
