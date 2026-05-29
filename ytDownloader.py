@@ -48,8 +48,38 @@ def downloader():
 if __name__ == "__main__":
     downloader()
 
-# Ejecutar en consola: python3 ./ytDownloader.py
-# Para mantener pytubefix al día, se debe ejecutar este comando: 
-# pip install --upgrade pytubefix --break-system-packages
-# Si alguna vez el script se vuelve "loco" y no funciona ni actualizando, a veces es mejor forzar una reinstalación limpia:
-# pip uninstall pytubefix --break-system-packages -y && pip install pytubefix --break-system-packages
+# # Ejecutar en consola: python3 ./ytDownloader.py
+# # Para mantener pytubefix al día, se debe ejecutar este comando: 
+# # pip install --upgrade pytubefix --break-system-packages
+# # Si alguna vez el script se vuelve "loco" y no funciona ni actualizando, a veces es mejor forzar una reinstalación limpia:
+# # pip uninstall pytubefix --break-system-packages -y && pip install pytubefix --break-system-packages
+
+
+# Para descargar de mitocode de vimeo:
+# sudo apt update
+# sudo apt install python3-venv python3-full
+# python3 -m venv venv
+# source venv/bin/activate
+# Verás que tu prompt ahora empieza con (venv). Ahora sí puedes instalar lo que quieras.
+# pip install yt-dlp
+# sudo apt update && sudo apt install ffmpeg
+# Ejecutar comando: 
+# yt-dlp --referer "https://apps.mitocode.com/" "https://player.vimeo.com/video/1185028918"
+# O ejecutar el script en su lugar pero saliendo del ambiente (env) con deactivate
+
+# import yt_dlp
+
+# video_url = "https://player.vimeo.com/video/1183608458"
+# referer_url = "https://apps.mitocode.com/"
+
+# ydl_opts = {
+#     'referer': referer_url,
+#     'format': 'best',  # Descarga la mejor calidad disponible
+#     'outtmpl': 'clase_mitocode.%(ext)s', # Nombre del archivo de salida
+#     # 'cookiefile': 'cookies.txt', # Descomenta esta línea si falla sin cookies
+# }
+
+# with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+#     print("Iniciando descarga...")
+#     ydl.download([video_url])
+#     print("¡Descarga completada!")
