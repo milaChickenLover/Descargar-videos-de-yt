@@ -16,7 +16,7 @@ def downloader():
     url = input("Pega la URL de YouTube: ")
 
     try:
-        yt = YouTube(url, on_progress_callback=on_progress)
+        yt = YouTube(url, on_progress_callback=on_progress, use_po_token=True)
         print(f"\nProcesando: {yt.title}")
 
         if opcion == '1':
@@ -54,6 +54,12 @@ if __name__ == "__main__":
 # # Si alguna vez el script se vuelve "loco" y no funciona ni actualizando, a veces es mejor forzar una reinstalación limpia:
 # # pip uninstall pytubefix --break-system-packages -y && pip install pytubefix --break-system-packages
 
+# Solución sin el script,porque ya está roto, descargar yt-dlp:
+# pip install --upgrade yt-dlp --break-system-packages
+# Usarlo para mp3 y video máxima resolución ejecutar respectivamente:
+# yt-dlp -x --audio-format mp3 "TU_URL_AQUÍ"
+# yt-dlp "TU_URL_AQUÍ"
+
 
 # Para descargar de mitocode de vimeo:
 # sudo apt update
@@ -66,20 +72,3 @@ if __name__ == "__main__":
 # Ejecutar comando: 
 # yt-dlp --referer "https://apps.mitocode.com/" "https://player.vimeo.com/video/1185028918"
 # O ejecutar el script en su lugar pero saliendo del ambiente (env) con deactivate
-
-# import yt_dlp
-
-# video_url = "https://player.vimeo.com/video/1183608458"
-# referer_url = "https://apps.mitocode.com/"
-
-# ydl_opts = {
-#     'referer': referer_url,
-#     'format': 'best',  # Descarga la mejor calidad disponible
-#     'outtmpl': 'clase_mitocode.%(ext)s', # Nombre del archivo de salida
-#     # 'cookiefile': 'cookies.txt', # Descomenta esta línea si falla sin cookies
-# }
-
-# with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-#     print("Iniciando descarga...")
-#     ydl.download([video_url])
-#     print("¡Descarga completada!")
